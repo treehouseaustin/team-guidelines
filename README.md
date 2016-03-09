@@ -82,14 +82,11 @@ All server-side Javascript should utilize any available [ECMAScript 2015 (ES6)](
 
 The majority of client-side Javascript must be written as standard ES5 Javascript without the use of cross-compilers. The main exception will be Angular2 projects, specifically if they are isomorphic in approach, as these may be written with ES6 features and transpiled to compatible server and client variants.
 
-Code must follow the AirBNB Javascript style guide and linted with ESLint using the [AirBNB config](https://GitHub.com/airbnb/javascript/tree/master/packages/eslint-config-airbnb). Projects contain an `.eslintrc` which defines the AirBNB configuration and exceptions. Currently, there are two exceptions to the base AirBNB config:
-
-* `strict` rule is disabled, as `let` is available in strict mode only.
-* `prefer-rest-params` rule is disabled, as the spread operator is not available in node `4.x`
+Code style follows the Google Javascript style guide and should be linted with ESLint using the [Google config](https://github.com/google/eslint-config-google). Projects contain an `.eslintrc.js` which defines the Google configuration and exceptions. See the [.eslintrc.js file](./.eslintrc.js) in this repository for the current list of exceptions configured.
 
 In addition to the style guide above, client-side Angular components should conform to [johnpapa's Angular Style Guide](https://GitHub.com/johnpapa/angular-styleguide) with a specific emphasis towards structuring the application using Angular 1.5 `components` in preparation for Angular 2
 
-Projects can be linted with `npm run lint`. It is expected that all developers configure their IDE with appropriate linting and not rely on the CI process to catch code style issues.
+Projects can be manually linted with `npm run lint`. If you are using Atom and have run the [environment provisioning scripts](https://github.com/treehouseaustin/environment-setup) your IDE comes configured with AtomLinter which will use all project-specific rules. If you are using a different IDE you should configure it with appropriate linting and not rely on the CI process to catch code style issues.
 
 #### Commit message format
 
