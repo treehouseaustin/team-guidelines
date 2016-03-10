@@ -35,7 +35,7 @@ Any development must have a corresponding story before work has begun on the imp
 
 * **Chores** represent small updates to existing code that may otherwise be categorized as a feature but are too minor in nature. These can be textual updates, typos, or documentation.
 
-All stories are represented through [Issues](https://guides.github.com/features/issues/) and linked [Tasks](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) in Github and are managed in task boards through [Zenhub](https://www.zenhub.io). Stories are categorized by Type and further grouped into Epics using [Labels](https://robinpowered.com/blog/best-practice-system-for-organizing-and-tagging-github-issues/) representing areas of the application or large feature-sets. [Milestones](https://help.github.com/articles/creating-and-editing-milestones-for-issues-and-pull-requests/) are used to track progress against releases and important dates to the business stakeholders.
+All stories are represented through [Issues](https://guides.github.com/features/issues/) and linked [Tasks](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) in Github and are managed in task boards through [Zenhub](https://www.zenhub.io). Stories are categorized by Type and further grouped into Epics using [Labels](./LABELS.md) representing areas of the application or large feature-sets. [Milestones](https://help.github.com/articles/creating-and-editing-milestones-for-issues-and-pull-requests/) are used to track progress against releases and important dates to the business stakeholders.
 
 #### Features
 
