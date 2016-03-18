@@ -52,7 +52,9 @@ All issues are moved between Pipelines representing their current stage within t
 
 * **Review/QA** We use the Review/QA column for Issues that are open to the team for review and testing. An issue is moved to the Review column when a pull request has been made for the story within GitHub. This will run all automated QA process and deploy the feature to a staging server that can be reviewed at any time by the stakeholders.
 
-* **Done** These issues have been accepted by the product owner or business stakeholder and no additional work is required. All code should meet the agreed-upon Definition of Done criteria and merged into the release branch.
+* **Done** These issues have been accepted by the product owner or business stakeholder and no additional work is required. All code should meet the agreed-upon Definition of Done criteria and is awaiting final merge into the release branch.
+
+* **Closed** Once an issue has been merged into the release branch it is closed. Additionally, issues may be closed immediately if it represents duplication of an existing story or work that has been completely de-prioritized.
 
 ### Feature development lifecycle
 
