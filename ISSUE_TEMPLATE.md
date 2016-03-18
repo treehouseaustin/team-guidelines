@@ -18,12 +18,14 @@ A brief description of the requested functionality from the persona or business 
 
 * a bulleted list of details that are important to either the persona or the business in order for this feature to deliver value
 * technical implementation or solution architecture, when it is specifically relevant to the feature, can be specified here
+* for a bug, this should outline the expected behavior and actual behavior to define the fix required
 
 ### How to Demo / Steps to Reproduce [choose one]
 
 1. these steps represent acceptance criteria for the story: how to demo for features and steps to reproduce for bugs
 2. this should remain free of highly technical instruction when possible so that a non-technical user can follow
 3. for features, it's ideal if the how to demo is written from the perspective of the persona this story has been written for
+4. for bugs, these steps should reliably (if possible) reproduce the bug and serve as acceptance criteria when the bug is fixed
 
 ### Development Tasks
 
@@ -31,3 +33,4 @@ A brief description of the requested functionality from the persona or business 
 - [ ] can be more technical in nature since these are developer-facing
 - [ ] no single task should take longer than one day to complete
 - [ ] serves as a leading indicator to the progress made on this story
+- [ ] this section can be removed for bugs and chores

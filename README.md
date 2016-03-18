@@ -27,39 +27,7 @@ All databases can be installed and run locally in a Docker container using Kitem
 
 ## Development guidelines
 
-Any development must have a corresponding story before work has begun on the implementation. This story can take the form of a feature, bug or chore.
-
-* **Features** are vertical slices of functionality that delivery business value in the form of software. They represent a complete set of usable functionality and are sized according to their relative difficulty using a point value based on the fibonacci sequence. Typically stories that are sized at 13 points or higher should be broken into smaller slices if possible so long as they deliver a complete set of functionality.
-
-* **Bugs** are any technical issue that exists with currently deployed features. Bugs can also represent refactoring required on existing code. Bugs cannot be created for features that are in progress as these should be included in the feature branch itself. Bugs are not sized.
-
-* **Chores** represent small updates to existing code that may otherwise be categorized as a feature but are too minor in nature. These can be textual updates, typos, or documentation.
-
-All stories are represented through [Issues](https://guides.github.com/features/issues/) and linked [Tasks](https://github.com/blog/1375-task-lists-in-gfm-issues-pulls-comments) in Github and are managed in task boards through [Zenhub](https://www.zenhub.io). Stories are categorized by Type and further grouped into Epics using [Labels](./LABELS.md) representing areas of the application or large feature-sets. [Milestones](https://help.github.com/articles/creating-and-editing-milestones-for-issues-and-pull-requests/) are used to track progress against releases and important dates to the business stakeholders.
-
-#### Features
-
-Before work on a feature can begin, it must be thoroughly defined with at least the following:
-
-* **Feature title** A feature title should include the common persona, requested feature, and a "so that" which describes the value this feature delivers to either the persona or the business: _"As a [persona] I would like [feature] so that [business or persona value]"_
-
-* **Requirements** Requirements are a bulleted list of details that are important to either the persona or the business in order for this feature to deliver value.
-
-* **How to Demo** This section should contain step-by-step instructions on how to demo the feature to the business stakeholder. It is important to keep this section free of any technical descriptors or complexities. It should be as simple as "do this, expect that". The How to Demo also provides a great starting point for an End to End test to accompany the feature.
-
-* **Tasks** The tasks sections serves as a checklist to the developer and should represent the steps necessary to implement the story. Tasks should be broken up sufficiently so that no one task takes longer than one day. Tasks can and should be more technical in nature and serve as a leading indicator to the progress made on the feature.
-
-#### Feature development lifecycle
-
-Feature development happens on independent branches and include both automated and manual tests before staging, review, and final deployment. The following is a high level overview of the development lifecycle on each feature. More specifics on the tools and processes used in each step are detailed in following sections.
-
-1. Feature development begins by branching off the latest stable `development` branch in GIT. Once finished, a pull request is created to signify completion.
-2. Travis runs all functional unit tests and a suite of responsive browser-based end to end tests and reports status in the pull request.
-3. Static analysis is run on the newly committed code and reported in the pull request. Meanwhile, a manual peer review of both the code and functionality is conducted by another developer on the team.
-4. During the manual review process, a UAT environment is automatically created with the new feature deployed. After the feature is approved the code is merged and deployed to Staging and the UAT environment is spun down.
-5. Accepted features from the previous sprint are pushed to the release branch which kicks off a final round of automated tests in Travis before building and deploying the new release.
-
-![CI/CD Illustration](https://lh6.googleusercontent.com/NvLxlamVmTVZn2VvjQZriwqNlOEd8tFKS9LzWVDFIjI1C2QOTYVKHT-ftmfz6gHXUUqYwg=w2466-h1272)
+Any development must have a corresponding story before work has begun on the implementation. This story can take the form of a feature, bug or chore. More information on the [Backlog](./BACKLOG.md) and our feature development life cycle [can be found here](./BACKLOG.md).
 
 ### GIT
 
@@ -72,7 +40,7 @@ With the exception of generic components that we choose to open source, all repo
 Projects follow the [GIT Flow](http://nvie.com/posts/a-successful-git-branching-model/) branching model, with development being performed on
 `feature`, `bug`, or `chore` branches. When a feature is complete, a pull request is opened in GitHub for review by another member of the team.
 
-Once the feature is complete and marked as Ready to Merge, all commits are squashed into a single commit following our Commit Message Format guidelines. The approved pull request will be merged as a fast-forward commit.
+Once the feature is complete and marked as Ready to Merge, all commits are squashed into a single commit following our [Commit Message Format guidelines](#commit-message-format). The approved pull request will be merged as a fast-forward commit.
 
 For this reason it is important that work on a feature or bug branch represent a narrow vertical slice of complete functionality. Refactoring neighboring code or fixing bugs should happen on their own branch unless they are directly required for the feature work being performed.
 
