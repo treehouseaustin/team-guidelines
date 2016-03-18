@@ -6,9 +6,9 @@ Labels are used for basic classification of issues representing areas of the app
 
 All stories must have a general classification tag which at the highest level simply determine the [story type]([feature guidelines](./README.md#development-guidelines)):
 
-* `feature` new functionality that delivers business value to a particular persona
-* `bug` an issue that must be fixed on existing completed features
-* `chore` a single piece of work on existing completed features such as small copy or design changes
+* `type: feature` new functionality that delivers business value to a particular persona
+* `type: bug` an issue that must be fixed on existing completed features
+* `type: chore` a single piece of work on existing completed features such as small copy or design changes
 
 ### Epics
 
@@ -18,10 +18,11 @@ Epics are determined by the project and represent large buckets of functionality
 
 The following area of focus tags are primarily used to further classify bug or chores:
 
-* `backend` typically any code targeting Node.js or the API layer.
-* `frontend` all user facing code including HTML and CSS as well as front-end MVC work in Angular.
-* `security` anything which affects the security of the product.
-* `refactor` typically paying down technical debt; no new functionality has been added.
+* `focus: backend` typically any code targeting Node.js or the API layer.
+* `focus: frontend` all user facing code including HTML and CSS as well as front-end MVC work in Angular.
+* `focus: performance` improvement to the backend or frontend performance; no new functionality has been added.
+* `focus: refactor` typically paying down technical debt; no new functionality has been added.
+* `focus: security` anything which affects the security of the product.
 
 As features represent a complete vertical slice of functionality most will include work that crosses multiple areas of focus. In this instance the backend and frontend tags can be skipped since they do not add clarifying value to the story
 
@@ -29,10 +30,10 @@ As features represent a complete vertical slice of functionality most will inclu
 
 Priority tags do not influence development order but provide additional context during sprint planning meetings. Unless categorized using a priority tag, all issues are considered of a "normal" priority.
 
-* `hotfix` Represent critical functionality that need to undergo a QA and release process independent of the current sprint plan. Typically reserved for situations where production systems are down, security is at risk, or the business operation is severely impacted with no available workaround.
-* `major` Issues that could otherwise be categorized as critical, but workarounds are available. These stories should typically move to the top of a sprint but will undergo a normal QA and deployment procedure following the conclusion of the sprint.
-* `high` Production systems are impacted but operating at an acceptable level. These may represent issues that are of stakeholder priority and the elevated priority should be considered in sprint planning but not automatically prioritized above all other work.
-* `low` Edge cases or known technical debt that should be considered for prioritization.
+* `P0: hotfix` Represent critical functionality that need to undergo a QA and release process independent of the current sprint plan. Typically reserved for situations where production systems are down, security is at risk, or the business operation is severely impacted with no available workaround.
+* `P1: major` Issues that could otherwise be categorized as critical, but workarounds are available. These stories should typically move to the top of a sprint but will undergo a normal QA and deployment procedure following the conclusion of the sprint.
+* `P2: high` Production systems are impacted but operating at an acceptable level. These may represent issues that are of stakeholder priority and the elevated priority should be considered in sprint planning but not automatically prioritized above all other work.
+* `P3: low` Edge cases or known technical debt that should be considered for prioritization.
 
 ## Process
 
