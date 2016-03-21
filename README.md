@@ -50,7 +50,18 @@ All server-side Javascript should utilize any available [ECMAScript 2015 (ES6)](
 
 The majority of client-side Javascript must be written as standard ES5 Javascript without the use of cross-compilers. The main exception will be Angular2 projects, specifically if they are isomorphic in approach, as these may be written with ES6 features and transpiled to compatible server and client variants.
 
-Code style follows the Google Javascript style guide and should be linted with ESLint using the [Google config](https://github.com/google/eslint-config-google). Projects contain an `.eslintrc.js` which defines the Google configuration and exceptions. See the [.eslintrc.js file](./.eslintrc.js) in this repository for the current list of exceptions configured.
+Code style follows the Google Javascript style guide and should be linted with ESLint using the [Google config](https://github.com/google/eslint-config-google). See the [.eslintrc.js file](./.eslintrc.js) in this repository for the current list of exceptions configured. This repository should be included as a development dependency to ensure the ESLint configuration stays consistent across all projects:
+
+1. `npm install git+https://github.com/treehouseaustin/team-guidelines.git --save-dev`
+
+2. Add the following to `package.json`:
+```
+"eslintConfig": {
+  "extends": [
+    "./node_modules/team-guidelines/.eslintrc.js"
+  ]
+}
+```
 
 In addition to the style guide above, client-side Angular components should conform to [johnpapa's Angular Style Guide](https://GitHub.com/johnpapa/angular-styleguide) with a specific emphasis towards structuring the application using Angular 1.5 `components` in preparation for Angular 2
 
