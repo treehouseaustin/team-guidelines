@@ -17,6 +17,14 @@ Once the feature is complete and marked as Ready to Merge, all commits are squas
 
 For this reason it is important that work on a feature or bug branch represent a narrow vertical slice of complete functionality. Refactoring neighboring code or fixing bugs should happen on their own branch unless they are directly required for the feature work being performed.
 
+#### Commit message format
+
+We follow [Google's Commit Message Guidelines](https://GitHub.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines) to maintain consistent and more readable commit messages that are easier to follow when looking through the project history.
+
+The scope in the commit header should correspond the feature's Label in the backlog. Epic labels should be used primarily with a generic label used for platform features which don't correspond to a particular Epic.
+
+Work in progress development happening on feature branches do not need to adhere to this commit message format until a pull request is opened and marked as ready for merge. While a feature is in progress it is encouraged to commit often with descriptive messages.
+
 ### Code style
 
 All server-side Javascript should utilize any available [ECMAScript 2015 (ES6)](https://nodejs.org/en/docs/es6/) features supported by Node that do not require a runtime flag.
@@ -39,14 +47,6 @@ Code style follows the Google Javascript style guide and should be linted with E
 In addition to the style guide above, client-side Angular components should conform to [johnpapa's Angular Style Guide](https://GitHub.com/johnpapa/angular-styleguide) with a specific emphasis towards structuring the application using Angular 1.5 `components` in preparation for Angular 2
 
 Projects can be manually linted with `npm run lint`. If you are using Atom and have run the [environment provisioning scripts](https://github.com/treehouseaustin/environment-setup) your IDE comes configured with AtomLinter which will use all project-specific rules. If you are using a different IDE you should configure it with appropriate linting and not rely on the CI process to catch code style issues.
-
-#### Commit message format
-
-We follow [Google's Commit Message Guidelines](https://GitHub.com/angular/angular/blob/master/CONTRIBUTING.md#-commit-message-guidelines) to maintain consistent and more readable commit messages that are easier to follow when looking through the project history.
-
-The scope in the commit header should correspond the feature's Label in the backlog. Epic labels should be used primarily with a generic label used for platform features which don't correspond to a particular Epic.
-
-Work in progress development happening on feature branches do not need to adhere to this commit message format until a pull request is opened and marked as ready for merge. While a feature is in progress it is encouraged to commit often with descriptive messages.
 
 ### Documentation
 
