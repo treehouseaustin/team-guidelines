@@ -4,13 +4,23 @@ This repository contains all guidelines for the development team. This is meant 
 
 ## Development environment
 
-A default local development environment can be quickly set up using our [Ansible provisioning scripts](https://github.com/treehouseaustin/environment-setup). This will install the Atom IDE and configure a basic Node environment with the `n` module available to quickly switch between Node versions on your local machine.
+A default local development environment can be quickly set up using our [provisioning scripts](https://github.com/treehouseaustin/environment-setup). This will install the Atom IDE and configure a basic Node environment with the `n` module available to quickly switch between Node versions on your local machine.
 
-Once your development environment is configured, you can customize your toolsets or IDE as you see fit so long as any final pushed code aligns with Treehouse development guidelines and any agreed-upon conventions as determined by your team.
+Once your development environment is configured, you can customize your toolsets or IDE as you see fit so long as any final pushed code aligns with TreeHouse development guidelines and any agreed-upon conventions as determined by your team.
 
 #### Node.js
 
-The LTS (`4.x`) version of node has been selected for application development unless otherwise noted in a specific project.
+The "Current" (`6.x`) version of Node is being used unless otherwise noted in a specific project. TreeHouse has a private NPM namespace at `@treehouse/[package]` which contains code specific to TreeHouse applications or where a public release is not appropriate due to the volatility of the development state. (See our [open source guidelines](./OPEN_SOURCE.md) for more details on use)
+
+##### NPM Token
+
+Once you have been added to our NPM organization you will need to login and add the authorization token to your `.bash_profile` in order to install and run any host application with a private dependency:
+
+1. `npm login` and enter your credentials.
+2. `cat ~/.npmrc | awk -F'authToken=' '{print $2}' | pbcopy` to copy your access token.
+3. `atom ~/.bash_profile` to edit your bash profile
+4. Add `export NPM_TOKEN="[token]"` to the top of this file.
+5. `source ~/.bash_profile` to refresh your Terminal session.
 
 #### Docker
 
@@ -21,7 +31,7 @@ Docker is being used to run databases locally depending on the specific project 
 Databases will be determined by the project and it's specific needs. With that in mind, we will typically use the following databases:
 
 * **MongoDB** for most dynamic models and associations.
-* **Postgres** for customer records and Salesforce integration.
+* **Postgres** for Salesforce integration.
 * **Redis**  for sessions and sockets along with caching where appropriate.
 * **ElasticSearch** for analytics and reporting purposes.
 
@@ -39,9 +49,9 @@ Specific architecture decisions will be documented in their corresponding reposi
 * **Angular** for front-end and client-facing UX
 * **SASS** for structured styling and responsive CSS
 
-Whenever appropriate, new applications which can be built off the main services API will be structured as independent lightweight front-end applications. In this case, we will use an isomorphic approach with Angular 2, Express and NGINX.
+Whenever appropriate, new applications which can be built off the main services API will be structured as independent lightweight front-end applications.
 
-Following best practices, all applications store sensitive configuration in the environment and not the codebase. Local configuration can be managed in `config/local.js` or using project-specific `.env` files to provide environment variables at run-time when developing locally.
+Following best practices, all applications store sensitive configuration in the environment and not the codebase. Local configuration can be managed in `config/local.js` to provide environment variables at run-time when developing locally.
 
 #### Logging and metrics
 
@@ -54,8 +64,6 @@ In addition to standard logging, exception tracking in Production on both the se
 #### Deployment
 
 [Heroku](https://www.heroku.com) is used for all production applications, QA environments, and review apps. Each application will be configured in a [Pipeline](https://devcenter.heroku.com/articles/pipelines). This ensures that all code being reviewed at any stage in the feature development lifecycle is done so on an exact replica of the production environment.
-
-![Heroku Pipeline](https://s3.amazonaws.com/heroku-devcenter-files/article-images/1456225758-Example-Pipeline.png)
 
 [IBM Compose](https://www.compose.io) is used for all databases and provides automated backups and disaster recovery in addition to general database environment optimization and configuration. The only exception will be  data synced with Salesforce using [Heroku Connect](https://www.heroku.com/connect) which is stored using a [Heroku Postgres](https://www.heroku.com/postgres) database.
 
