@@ -1,15 +1,12 @@
 {
-  "name": "team-guidelines",
+  "name": "@treehouse/guidelines",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "TreeHouse development guidelines and team processes.",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/treehouseaustin/team-guidelines.git"
-  },
+  "repository": "treehouseaustin/team-guidelines",
   "license": "MIT",
   "homepage": "https://github.com/treehouseaustin/team-guidelines#readme",
   "dependencies": {
