@@ -54,6 +54,28 @@ In addition to the style guide above, client-side Angular components should conf
 
 Projects can be manually linted with `npm run lint`. If you are using Atom and have run the [environment provisioning scripts](https://github.com/treehouseaustin/environment-setup) your IDE comes configured with AtomLinter which will use all project-specific rules. If you are using a different IDE you should configure it with appropriate linting and not rely on the CI process to catch code style issues.
 
+#### Sass-lint
+
+Projects with a css style component will additionally adhere to code style enforced by `sass-lint`. See the [.sass-lint.yml file](./.sass-lint.yml) and reference [sass-lint docs/rules](https://github.com/sasstools/sass-lint/tree/develop/docs/rules) for individual rule explanations.
+
+To include, update your `package.json` to include the following structure:
+```
+{
+  "devDependencies": {
+    "@treehouse/guidelines": "*"
+    "sass-lint": "*"
+  },
+  "sasslintConfig": "./node_modules/@treehouse/guidelines/.sass-lint.yml",
+  "scripts": {
+    "sass-lint": "sass-lint 'frontend/**/*.scss' -v -q"
+  }
+}
+```
+Replace `*` with the current supported version.
+
+To test, run `npm run sass-lint` from the project root folder.
+
+
 ### Documentation
 
 All classes and server-side code should be documented with [JSDoc style](http://usejsdoc.org) comments, identifying the purpose of the function, arguments, and return values.

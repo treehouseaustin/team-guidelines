@@ -1,0 +1,112 @@
+files:
+  include:
+    - 'app/**/*.s+(a|c)ss'
+    - 'src/**/*.s+(a|c)ss'
+rules:
+  border-zero:
+    - 1
+    - convention: none
+  class-name-format:
+    - 2
+    - convention: hyphenatedlowercase
+  empty-line-between-blocks:
+    - 0
+    - ignore-single-line-rulesets: true
+  extends-before-declarations: 2
+  extends-before-mixins: 2
+  final-newline:
+    - 2
+    - include: true
+  force-attribute-nesting: 0
+  force-element-nesting: 0
+  force-pseudo-nesting: 0
+  hex-length:
+    - 2
+    - style: short
+  hex-notation:
+    - 2
+    - style: uppercase
+  id-name-format:
+    - 2
+    - convention: hyphenatedlowercase
+  indentation:
+    - 0
+    - size: 2
+  leading-zero:
+    - 2
+    - include: true
+  mixin-name-format:
+    - 2
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+  mixins-before-declarations: 2
+  nesting-depth:
+    - 2
+    - max-depth: 3
+  no-color-keywords: 2
+  no-color-literals: 0
+  no-css-comments: 0
+  no-debug: 2
+  no-duplicate-properties: 1
+  no-empty-rulesets: 2
+  no-ids: 1
+  no-important: 1
+  no-invalid-hex: 2
+  no-mergeable-selectors: 2
+  no-misspelled-properties:
+    - 2
+    - extra-properties: []
+  no-qualifying-elements:
+    - 2
+    - allow-element-with-attribute: true
+      allow-element-with-class: true
+      allow-element-with-id: false
+  no-transition-all: 0
+  no-vendor-prefixes:
+    - 1
+    - additional-identifiers: []
+      excluded-identifiers: []
+  placeholder-in-extend: 0
+  placeholder-name-format:
+    - 1
+    - convention: hyphenatedlowercase
+  property-sort-order:
+    - 2
+    - ignore-custom-properties: false
+  quotes:
+    - 2
+    - style: single
+  shorthand-values:
+    - 0
+    - allowed-shorthands:
+        - 1
+        - 2
+        - 3
+        - 4
+  single-line-per-selector: 0
+  space-after-colon:
+    - 2
+    - include: true
+  space-after-comma:
+    - 2
+    - include: true
+  space-before-bang:
+    - 2
+    - include: true
+  space-before-brace:
+    - 2
+    - include: true
+  space-before-colon: 1
+  space-between-parens:
+    - 2
+    - include: false
+  trailing-semicolon: 2
+  url-quotes: 1
+  variable-for-property:
+    - 0
+    - properties: []
+  variable-name-format:
+    - 2
+    - allow-leading-underscore: true
+      convention: hyphenatedlowercase
+  zero-unit: 2
