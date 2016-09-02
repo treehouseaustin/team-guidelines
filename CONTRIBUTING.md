@@ -33,9 +33,23 @@ All server-side Javascript should utilize any available [ECMAScript 2015 (ES6)](
 
 The majority of client-side Javascript must be written as standard ES5 Javascript without the use of cross-compilers. The main exception will be Angular2 projects, specifically if they are isomorphic in approach, as these may be written with ES6 features and transpiled to compatible server and client variants.
 
-Code style follows the Google Javascript style guide and should be linted with ESLint using the [Google config](https://github.com/google/eslint-config-google). See the [.eslintrc.js file](./.eslintrc.js) in this repository for the current list of exceptions configured. This repository should be included as a development dependency to ensure the ESLint configuration stays consistent across all projects:
+Code style follows a slightly relaxed Google Javascript style guide and should be linted with ESLint. See the [.eslintrc.js file](./.eslintrc.js) in this repository for the current list of exceptions configured.
 
-1. `npm install @treehouse/guidelines --save-dev`
+#### Angular
+
+In addition to the style guide above, client-side Angular components should conform to [johnpapa's Angular Style Guide](https://GitHub.com/johnpapa/angular-styleguide) with a specific emphasis towards structuring the application using Angular 1.5 `components` in preparation for Angular 2
+
+#### CSS and SASS
+
+Projects with CSS styling should be written in SASS and adhere to code style enforced by `sass-lint`. See the [.sass-lint.yml file](./.sass-lint.yml) and reference [sass-lint docs/rules](https://github.com/sasstools/sass-lint/tree/develop/docs/rules) for individual rule explanations.
+
+#### Linting
+
+Projects can be manually linted with `npm run lint`. If you are using Atom and have run the [environment provisioning scripts](https://github.com/treehouseaustin/environment-setup) your IDE comes configured with AtomLinter which will use all project-specific rules. If you are using a different IDE you should configure it with appropriate linting and not rely on the CI process to catch code style issues.
+
+This repository should be included as a development dependency to ensure the ESLint configuration stays consistent across all projects:
+
+1. `npm install @treehouse/guidelines eslint sass-lint --save-dev`
 
 2. Add the following to `package.json`:
 ```
@@ -43,38 +57,18 @@ Code style follows the Google Javascript style guide and should be linted with E
   "extends": [
     "./node_modules/@treehouse/guidelines/.eslintrc.js"
   ]
-}
+},
+"sasslintConfig": "./node_modules/@treehouse/guidelines/.sass-lint.yml"
 ```
 
-#### Angular
-
-In addition to the style guide above, client-side Angular components should conform to [johnpapa's Angular Style Guide](https://GitHub.com/johnpapa/angular-styleguide) with a specific emphasis towards structuring the application using Angular 1.5 `components` in preparation for Angular 2
-
-#### Linting
-
-Projects can be manually linted with `npm run lint`. If you are using Atom and have run the [environment provisioning scripts](https://github.com/treehouseaustin/environment-setup) your IDE comes configured with AtomLinter which will use all project-specific rules. If you are using a different IDE you should configure it with appropriate linting and not rely on the CI process to catch code style issues.
-
-#### Sass-lint
-
-Projects with a css style component will additionally adhere to code style enforced by `sass-lint`. See the [.sass-lint.yml file](./.sass-lint.yml) and reference [sass-lint docs/rules](https://github.com/sasstools/sass-lint/tree/develop/docs/rules) for individual rule explanations.
-
-To include, update your `package.json` to include the following structure:
+3. The following set of NPM scripts can be used:
 ```
-{
-  "devDependencies": {
-    "@treehouse/guidelines": "*"
-    "sass-lint": "*"
-  },
-  "sasslintConfig": "./node_modules/@treehouse/guidelines/.sass-lint.yml",
-  "scripts": {
-    "sass-lint": "sass-lint 'frontend/**/*.scss' -v -q"
-  }
-}
+"lint": "npm run lint:js && npm run lint:sass",
+"lint:js": "./node_modules/.bin/eslint ./",
+"lint:sass": "sass-lint 'frontend/**/*.scss' -v -q",
 ```
-Replace `*` with the current supported version.
 
-To test, run `npm run sass-lint` from the project root folder.
-
+4. Additionally, it is recommended to add a `posttest` script aliasing the `npm run lint` function to automatically enforce lint rules in the CI environment.
 
 ### Documentation
 
