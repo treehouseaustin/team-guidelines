@@ -1,6 +1,5 @@
 {
   "name": "@treehouse/guidelines",
-  "private": true,
   "version": "1.0.1",
   "description": "TreeHouse development guidelines and team processes.",
   "scripts": {
