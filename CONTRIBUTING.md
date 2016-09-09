@@ -10,8 +10,18 @@ With the exception of generic components that we choose to open source, all repo
 
 #### Branching
 
-Projects follow the [GIT Flow](http://nvie.com/posts/a-successful-git-branching-model/) branching model, with development being performed on
-`feature`, `bug`, or `chore` branches. When a feature is complete, a pull request is opened in GitHub for review by another member of the team.
+Projects follow the [GIT Flow](http://nvie.com/posts/a-successful-git-branching-model/) branching model, with development being performed on named branches. When a feature is complete, a pull request is opened in GitHub for review by another member of the team. Traditional GIT Flow allows for `feature`, `bug`, and `chore` branches. In addition, we encourage the use of any of the following available types which are used when composing the final commit message:
+
+- **feat**: A new feature representing added user functionality
+- **fix**: A bug fix
+- **docs**: Documentation only changes
+- **style**: Changes that do not affect the meaning of the code (white-space, formatting, missing semi-colons, etc)
+- **refactor**: A code change that neither fixes a bug nor adds a feature
+- **perf**: A code change that improves performance
+- **test**: Adding missing tests or correcting existing tests
+- **build**: Changes that affect the build system or external dependencies (example scopes: gulp, broccoli, npm)
+- **ci**: Changes to our CI configuration files and scripts (example scopes: Travis, Circle, BrowserStack, SauceLabs)
+- **chore**: Other changes that don't modify src or test files
 
 Once the feature is complete and marked as Ready to Merge, all commits are squashed into a single commit following our [Commit Message Format guidelines](#commit-message-format). The approved pull request will be merged as a fast-forward commit.
 
