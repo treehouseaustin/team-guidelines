@@ -31,7 +31,6 @@ Docker is being used to run databases locally depending on the specific project 
 Databases will be determined by the project and it's specific needs. With that in mind, we will typically use the following databases:
 
 * **MongoDB** for most dynamic models and associations.
-* **Postgres** for Salesforce integration.
 * **Redis**  for sessions and sockets along with caching where appropriate.
 * **ElasticSearch** for analytics and reporting purposes.
 
@@ -66,7 +65,7 @@ In addition to standard logging, exception tracking in Production on both the se
 
 [Heroku](https://www.heroku.com) is used for all production applications, QA environments, and review apps. Each application will be configured in a [Pipeline](https://devcenter.heroku.com/articles/pipelines). This ensures that all code being reviewed at any stage in the feature development lifecycle is done so on an exact replica of the production environment.
 
-[IBM Compose](https://www.compose.io) is used for all databases and provides automated backups and disaster recovery in addition to general database environment optimization and configuration. The only exception will be  data synced with Salesforce using [Heroku Connect](https://www.heroku.com/connect) which is stored using a [Heroku Postgres](https://www.heroku.com/postgres) database.
+[IBM Compose](https://www.compose.io) is used for all databases and provides automated backups and disaster recovery in addition to general database environment optimization and configuration.
 
 Due to ephemeral file systems on all production applications, any permanent file storage will utilize [Amazon S3 buckets](https://aws.amazon.com/s3/). When files are uploaded by users, a [CORS upload](https://aws.amazon.com/blogs/aws/amazon-s3-cross-origin-resource-sharing/) will be used to transfer the file directly between the user and S3 without involving the production application.
 
