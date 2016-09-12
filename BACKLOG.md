@@ -40,7 +40,7 @@ Bugs and chores must have full definition before the story can be started, but d
 
 All issues are moved between Pipelines representing their current stage within the development lifecycle. Currently, the following workflow is observed:
 
-![Pipelines](https://www.zenhub.io/blog/content/images/2014/Sep/1364c6ce-3d07-11e4-8f7f-30eb1b84a6ca.jpg)
+![Pipelines](./images/pipeline-overview.jpg)
 
 * **New Issues** New stories or issues are created here. Anyone from the team can create an Issue at any time with as little or as much information as is available at the time. Issues in this category should be triaged regularly by the team and either moved to the Icebox or de-prioritized completely.
 
@@ -70,4 +70,4 @@ Feature development happens on independent branches and include both automated a
 
 5. Accepted features from the previous sprint are pushed to the release branch which kicks off a final round of automated tests in Travis before building and deploying the new release.
 
-![CI/CD Illustration](https://lh6.googleusercontent.com/NvLxlamVmTVZn2VvjQZriwqNlOEd8tFKS9LzWVDFIjI1C2QOTYVKHT-ftmfz6gHXUUqYwg=w2466-h1272)
+![CI/CD Illustration](./images/ci-overview.png)
