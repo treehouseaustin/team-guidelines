@@ -48,6 +48,7 @@ Specific architecture decisions will be documented in their corresponding reposi
 * **Sails and Express** for server-side API and models
 * **Angular** for front-end and client-facing UX
 * **SASS** for structured styling and responsive CSS
+* **Webpack** for bundling of client-side Javascript
 
 Whenever appropriate, new applications which can be built off the main services API will be structured as independent lightweight front-end applications.
 
