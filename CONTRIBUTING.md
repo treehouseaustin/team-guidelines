@@ -4,9 +4,7 @@ Any development must have a corresponding story before work has begun on the imp
 
 ### GIT
 
-All code developed for TreeHouse projects must be tracked in version control through GIT. All repositories are stored on GitHub under the [TreeHouse organization](https://github.com/treehouseaustin).
-
-With the exception of generic components that we choose to open source, all repositories will be set to private in our GitHub account. Even so, care should be taken against committing any credentials or potentially sensitive information.
+All code developed for our projects must be tracked in version control through GIT. With the exception of generic components that we choose to [open source](./OPEN_SOURCE.md), all repositories will be set to private in our GitHub account. Even so, care should be taken against committing any credentials or potentially sensitive information.
 
 #### Branching
 
@@ -39,9 +37,7 @@ Work in progress development happening on feature branches do not need to adhere
 
 #### Javascript
 
-All server-side Javascript should utilize any available [ECMAScript 2015 (ES6)](https://nodejs.org/en/docs/es6/) features supported by Node that do not require a runtime flag.
-
-The majority of client-side Javascript must be written as standard ES5 Javascript without the use of cross-compilers. The main exception will be Angular2 projects, specifically if they are isomorphic in approach, as these may be written with ES6 features and transpiled to compatible server and client variants.
+All server-side Javascript should utilize any available [ECMAScript 2015 (ES6)](https://nodejs.org/en/docs/es6/) features supported by Node that do not require a runtime flag. Unless otherwise specified by the project, all front-end Javascript is run through [webpack](https://webpack.github.io/) and [Babel](https://babeljs.io/) which transpiles to browser-compatible ES5.
 
 Code style follows a slightly relaxed Google Javascript style guide and should be linted with ESLint. See the [.eslintrc.js file](./.eslintrc.js) in this repository for the current list of exceptions configured.
 
