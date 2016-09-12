@@ -1,9 +1,13 @@
-- [ ] New code has been sufficiently documented.
+- **Developer**
+- [ ] New code (when present) has been sufficiently documented.
 - [ ] Test coverage for all new code or regression tests for bug fixes.
-- [ ] Developer QA ensuring acceptance criteria is met and no regressions have been introduced.
-- [ ] Code review conducted by peer
-- [ ] Feedback from code review discussed and adopted
-- [ ] Commit history squashed with proper formatting
+- [ ] Acceptance criteria is met and no regressions have been introduced.
+- **Code Review**
+- [ ] Code review has been conducted by a peer.
+- [ ] Feedback from code review discussed and adopted.
+- **Acceptance**
+- [ ] Commit history squashed with proper formatting.
+- [ ] Any relevant issue number is linked in the commit body.
 - [ ] Ready to merge!
 
 ---
