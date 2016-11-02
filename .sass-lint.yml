@@ -55,7 +55,7 @@ rules:
   no-mergeable-selectors: 2
   no-misspelled-properties:
     - 2
-    - extra-properties: []
+    - extra-properties: ['-webkit-overflow-scrolling']
   no-qualifying-elements:
     - 2
     - allow-element-with-attribute: true
